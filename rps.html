@@ -5,10 +5,23 @@
 <html>
 <script>
 
+
 function computerPlay() {
-    var options = ["rock", "paper", "scissors"];
+    const options = ["rock", "paper", "scissors"];
     let compSelect = options[Math.floor(Math.random()*options.length)];
     console.log(compSelect);
+}
+
+function playerPlay () {
+    let playerSelectRaw = prompt("Make your choice, Rock, Paper or Scissors");
+    let playerSelectLow = playerSelectRaw.toLowerCase();
+    if (playerSelectLow = "rock" || "paper" || "scissors") {
+        let playerSelect = playerSelectLow;
+	console.log(playerSelect);
+    } else {
+        let warning = "Invalid Entry";
+    }
+	
 }
 
 </script>
