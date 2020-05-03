@@ -4,25 +4,57 @@
 
 <html>
 <script>
-
+let result = null;
 
 function computerPlay() {
-    const options = ["rock", "paper", "scissors"];
-    let compSelect = options[Math.floor(Math.random()*options.length)];
+	const options = ["rock", "paper", "scissors"];
+	let compSelection = options[Math.floor(Math.random()*options.length)];
     console.log(compSelect);
 }
 
 function playerPlay () {
     let playerSelectRaw = prompt("Make your choice, Rock, Paper or Scissors");
-    let playerSelectLow = playerSelectRaw.toLowerCase();
-    if (playerSelectLow = "rock" || "paper" || "scissors") {
-        let playerSelect = playerSelectLow;
+    let playerSelection = playerSelectRaw.toLowerCase();
 	console.log(playerSelect);
-    } else {
-        let warning = "Invalid Entry";
-    }
-	
 }
+
+function playRound(compSelect, playerSelect) {
+
+	switch (playerSelect) {
+		case 'rock':
+			if (compSelect = 'rock') {
+				result = "Draw, go again!";
+           	} else if (compSelect = 'paper') {
+	            result = "Paper beats rock, you LOSE!";
+	        } else {
+	           	result = "Rock beats scissors, you WIN!";
+	        }
+			break;
+	    case 'paper':
+	       	if (compSelect = 'rock') {
+	       	    result = "Paper beats rock, you WIN!";
+	       	} else if (compSelect = 'paper') {
+	       	    result = "Draw, go again!";
+	       	} else {
+	       	    result = "Scissors beat paper, you LOSE!";
+	       	}
+			break;
+       	case 'scissors':
+           	if (compSelect = 'rock') {
+           	    result = "Rock beats scissors, you LOSE!";
+           	} else if (compSelect = 'paper') {
+           	    result = "Scissors beats paper, you WIN!";
+           	} else {
+           	    result = "Draw, go again!";
+           	}
+			break;
+	}
+}
+
+let playerSelect = playerPlay()
+let compSelection = computerPlay()
+console.log(playRound(playerSelect, ComputerSelect))
+
 
 </script>
 </html>
