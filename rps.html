@@ -4,56 +4,55 @@
 
 <html>
 <script>
-let result = null;
 
 function computerPlay() {
 	const options = ["rock", "paper", "scissors"];
-	let compSelection = options[Math.floor(Math.random()*options.length)];
-    console.log(compSelect);
+	return options[Math.floor(Math.random()*options.length)];
 }
 
-function playerPlay () {
+function playerPlay() {
     let playerSelectRaw = prompt("Make your choice, Rock, Paper or Scissors");
-    let playerSelection = playerSelectRaw.toLowerCase();
-	console.log(playerSelect);
+    return playerSelectRaw.toLowerCase();
 }
 
-function playRound(compSelect, playerSelect) {
-
+function playRound(playerSelect, compSelect) {
 	switch (playerSelect) {
 		case 'rock':
-			if (compSelect = 'rock') {
-				result = "Draw, go again!";
-           	} else if (compSelect = 'paper') {
-	            result = "Paper beats rock, you LOSE!";
-	        } else {
-	           	result = "Rock beats scissors, you WIN!";
-	        }
-			break;
+			switch (compSelect) {
+				case 'rock':
+					return "Draw!";
+				case 'paper':
+					return "Paper beats rock, you LOSE!";
+				case 'scissors':
+					return "Rock beats scissors, you WIN!";
+			}
 	    case 'paper':
-	       	if (compSelect = 'rock') {
-	       	    result = "Paper beats rock, you WIN!";
-	       	} else if (compSelect = 'paper') {
-	       	    result = "Draw, go again!";
-	       	} else {
-	       	    result = "Scissors beat paper, you LOSE!";
+	       	switch (compSelect) {
+	       	    case 'rock':
+					return "Paper beats rock, you WIN!";
+	       		case 'paper':
+	       	    	return "Draw, go again!";
+	       		case 'scissors':
+	       	    	return "Scissors beat paper, you LOSE!";
 	       	}
-			break;
        	case 'scissors':
-           	if (compSelect = 'rock') {
-           	    result = "Rock beats scissors, you LOSE!";
-           	} else if (compSelect = 'paper') {
-           	    result = "Scissors beats paper, you WIN!";
-           	} else {
-           	    result = "Draw, go again!";
+           	switch(compSelect)	{
+           	    case 'rock':
+					return "Rock beats scissors, you LOSE!";
+           		case 'paper':
+           	    	return "Scissors beats paper, you WIN!";
+           		case 'scissors':
+           	    	return "Draw, go again!";
            	}
-			break;
 	}
 }
 
-let playerSelect = playerPlay()
-let compSelection = computerPlay()
-console.log(playRound(playerSelect, ComputerSelect))
+const playerSelect = playerPlay();
+console.log(playerSelect);
+const compSelect = computerPlay();
+console.log(compSelect);
+console.log(playRound(playerSelect, compSelect));
+
 
 
 </script>
