@@ -15,6 +15,7 @@ function playerPlay() {
     return playerSelectRaw.toLowerCase();
 }
 
+
 function playRound(playerSelect, compSelect) {
 	switch (playerSelect) {
 		case 'rock':
@@ -45,43 +46,31 @@ function playRound(playerSelect, compSelect) {
            	    	return "Draw, go again!";
            	}
 		}
-	}
+}
 
+let playerScore = 0;
+let compScore = 0;
 
-function game()	{
-	let playerScore = 0;
-	let compScore = 0;
-	for (let n = 1; n < 6; n++) {
-	playRound(playerSelect, compSelect);
-	switch () {
-		case "Draw, go again!":
-			playerScore ++;
-			compScore++;
-		<!-- this is called fall-through -->
+for (let i = 0; i < 5; i++) {
+const playerSelect = playerPlay();
+const compSelect = computerPlay();
+const roundResult = playRound(playerSelect, compSelect);
+console.log(roundResult);
+	switch (roundResult) {
 		case "Paper beats rock, you LOSE!":
 		case "Scissors beat paper, you LOSE!":
 		case "Rock beats scissors, you LOSE!":
 			compScore++;
+			break;
 		case "Rock beats scissors, you WIN!":
 		case "Paper beats rock, you WIN!":
 		case "Scissors beats paper, you WIN!":
 			playerScore++;
-	}
-	return playerScore;
-	console.log(playerScore);
-	console.log(compScore);
+			break;
+	}	
 }
-}
-	 
 
-
-const playerSelect = playerPlay();
-console.log(playerSelect);
-const compSelect = computerPlay();
-console.log(compSelect);
-console.log(playRound(playerSelect, compSelect));
-
-
+console.log("You " + playerScore + " : " + compScore + " Computer");
 
 </script>
 </html>
