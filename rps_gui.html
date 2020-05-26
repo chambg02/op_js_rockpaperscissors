@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+
+<!--For now just operating game from console. -->
+
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title> Rock, Paper, Scissors </title>
+</head>
+
+<body>
+<div id="container">
+	<button id="rock">Rock</button>
+	<button id="paper">Paper</button>
+	<button id="scissors">Scissors</button>
+</div>
+
+
+<script type="text/javascript" src="rps_gui.js"></script>
+
+
+</body>
+</html>
+
+<!--
+
+function computerPlay() {
+	const options = ["rock", "paper", "scissors"];
+	return options[Math.floor(Math.random()*options.length)];
+}
+
+function playerPlay() {
+    let playerSelectRaw = prompt("Make your choice, Rock, Paper or Scissors");
+    return playerSelectRaw.toLowerCase();
+}
+
+
+function playRound(playerSelect, compSelect) {
+	switch (playerSelect) {
+		case 'rock':
+			switch (compSelect) {
+				case 'rock':
+					return "Draw!";
+				case 'paper':
+					return "Paper beats rock, you LOSE!";
+				case 'scissors':
+					return "Rock beats scissors, you WIN!";
+			}
+	    case 'paper':
+	       	switch (compSelect) {
+	       	    case 'rock':
+					return "Paper beats rock, you WIN!";
+	       		case 'paper':
+	       	    	return "Draw, go again!";
+	       		case 'scissors':
+	       	    	return "Scissors beat paper, you LOSE!";
+	       	}
+       	case 'scissors':
+           	switch(compSelect)	{
+           	    case 'rock':
+					return "Rock beats scissors, you LOSE!";
+           		case 'paper':
+           	    	return "Scissors beats paper, you WIN!";
+           		case 'scissors':
+           	    	return "Draw, go again!";
+           	}
+		}
+}
+
+
+</script>
+</html>
+-->
+
+
