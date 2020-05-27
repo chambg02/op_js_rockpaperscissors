@@ -9,6 +9,7 @@ buttons.forEach((button) => {
 		console.log(compSelect);
 		const roundResult = playRound(playerSelect, compSelect);
 		console.log(roundResult);
+		document.getElementById('roundResult').innerHTML=roundResult;
 	});
 });
 
@@ -42,7 +43,7 @@ function playRound(playerSelect, compSelect) {
            		case 'scissors':
            	    	return "Draw, go again!";
            	}
-		}
+	}
 }
 
 
