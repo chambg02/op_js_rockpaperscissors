@@ -1,16 +1,37 @@
+
+var playerScore = 0;
+var compScore = 0;
+
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
 	button.addEventListener('click', (e) => {
-		
 		const playerSelect = button.id;
 		const options = ["rock", "paper", "scissors"];
 		const compSelect = options[Math.floor(Math.random()*options.length)];
 		console.log(playerSelect);
 		console.log(compSelect);
 		const roundResult = playRound(playerSelect, compSelect);
-		console.log(roundResult);
 		document.getElementById('roundResult').innerHTML=roundResult;
+		console.log(roundResult);
+
+		var outcome = "";
+		if (roundResult.search("Draw") >= 0) {
+			playerScore++;
+			compScore++;
+		} else if (roundResult.search("WIN") >= 0) {
+			playerScore++;
+		} else {
+			compScore++;
+		}
+		console.log(playerScore);
+		console.log(compScore);
+
+		const scoreDisplay = document.createElement('div');
+		scoreDisplay.classList.add('scoreDisplay');
+		scoreDisplay.textContent = 'Player ' + playerScore + " : " + compScore + ' Computer';
+		container.appendChild(scoreDisplay);
 	});
+
 });
 
 
@@ -45,7 +66,6 @@ function playRound(playerSelect, compSelect) {
            	}
 	}
 }
-
 
 
 
